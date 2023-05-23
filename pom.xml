@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.consol</groupId>
-    <artifactId>RestServiceDemo</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>RestServiceDemo</name>
