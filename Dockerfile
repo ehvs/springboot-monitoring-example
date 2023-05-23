@@ -13,9 +13,9 @@ RUN grep artifactId /home/jboss/target/maven-archiver/pom.properties | cut -d '=
 RUN mv /home/jboss/target/$(cat .env-id)-$(cat .env-version).jar /home/jboss/target/export-run-artifact.jar
 
 FROM registry.access.redhat.com/ubi8/openjdk-17-runtime:1.15
-COPY --from=builder /home/jboss/target/export-run-artifact.jar  /deployments/export-run-artifact.jar
-
-COPY /build/target/demo-0.0.1-SNAPSHOT.jar /home/root/restservicedemo/
+COPY --from=builder /home/jboss/target/export-run-artifact.jar /deployments/export-run-artifact.jar
+COPY --from=builder /home/jboss/target/export-run-artifact.jar /home/root/restservicedemo/demo-0.0.1-SNAPSHOT.jar
+# COPY /build/target/demo-0.0.1-SNAPSHOT.jar /home/root/restservicedemo/
 ENV myworkspace /home/root/restservicedemo
 WORKDIR ${myworkspace}
 EXPOSE 8080
